@@ -32,7 +32,9 @@ fun ContentItem() {
     var expanded by remember {
         mutableStateOf(false)
     }
-    val expandDp by animateDpAsState(targetValue = if (expanded) 45.dp else 0.dp)
+    val expandDp by animateDpAsState(targetValue = if (expanded) 45.dp else 0.dp, animationSpec = spring(
+        Spring.DampingRatioMediumBouncy,Spring.StiffnessLow
+    ))
 
     Row(
         verticalAlignment = Alignment.CenterVertically,
